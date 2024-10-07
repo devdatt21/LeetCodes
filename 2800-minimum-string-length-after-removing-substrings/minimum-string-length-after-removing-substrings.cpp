@@ -5,20 +5,16 @@ public:
 
         for(int i=0;i<s.size();i++)
         {
-            if(!st.empty())
-            {
-                char c=st.top();
-
-                if(c=='A' && s[i]=='B' || c=='C' && s[i]=='D')
-                {
-                    st.pop();
-
-                    continue;
-                }
-                
-            }
-            st.push(s[i]);
             
+            if(!st.empty() && ((st.top()=='A' && s[i]=='B') || (st.top()=='C' && s[i]=='D')))
+            {
+                st.pop();
+
+            }
+            else
+            {
+                st.push(s[i]);
+            }
 
         }
 
