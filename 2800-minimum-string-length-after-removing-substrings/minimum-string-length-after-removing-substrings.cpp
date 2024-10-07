@@ -1,35 +1,28 @@
 class Solution {
 public:
     int minLength(string s) {
-        stack<string> st;
-        // string word="";
-        int cnt=0;
+        stack<char> st;
 
         for(int i=0;i<s.size();i++)
         {
             if(!st.empty())
             {
-                string c=st.top();
+                char c=st.top();
 
-                if((c+s[i])=="AB" || (c+s[i])=="CD")
+                if(c=='A' && s[i]=='B' || c=='C' && s[i]=='D')
                 {
                     st.pop();
-                    // word.pop_back();
-                    cnt--;
 
                     continue;
                 }
                 
             }
-
-            // word.push_back(s[i]);
-            cnt++;
-            st.push(string(1,s[i]));
+            st.push(s[i]);
             
 
         }
 
         // cout << word << endl;
-        return cnt;
+        return st.size();
     }
 };
