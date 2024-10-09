@@ -16,12 +16,7 @@ public:
             st.push(s[i]);
         }
 
-        int n = st.size()/2;
-
-        if (n <= 0) {
-            return 0; 
-        }
-        return (n + 1) / 2;
+        return ((st.size()/2) + 1) / 2;
 
     }
 };
