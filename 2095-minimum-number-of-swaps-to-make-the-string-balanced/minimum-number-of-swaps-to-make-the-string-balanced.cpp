@@ -16,15 +16,12 @@ public:
             st.push(s[i]);
         }
 
-        cout << st.size() << endl;
-
         int n = st.size()/2;
 
         if (n <= 0) {
-            return 0; // or throw an exception for invalid input
+            return 0; 
         }
         return (n + 1) / 2;
 
-        // return ans;
     }
 };
