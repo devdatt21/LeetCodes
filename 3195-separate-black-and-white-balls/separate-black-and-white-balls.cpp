@@ -3,29 +3,15 @@ public:
     long long minimumSteps(string s) {
         
         long long cnt=0;
+        int curr=0;
 
-        int l=s.size()-1;
-        int r=l;
-
-        while(l>=0 && r>=0)
+        for(int i=0;i<s.size();i++)
         {
-            if(s[l]=='1' && s[r]=='0' && l<r)
+            if(s[i]=='0')
             {
-                swap(s[l],s[r]);
-                cnt += r-l;
-                r--;
-                l--;
+                cnt += i-curr;
+                curr++;
             }
-            else if(s[r]!='0')
-            {
-                r--;
-            }
-            else
-            {
-                l--;
-            }
-
-
         }
 
         return cnt;
