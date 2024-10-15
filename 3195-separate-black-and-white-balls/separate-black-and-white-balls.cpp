@@ -5,7 +5,7 @@ public:
         long long cnt=0;
 
         int l=s.size()-1;
-        int r=s.size()-1;;
+        int r=l;
 
         while(l>=0 && r>=0)
         {
