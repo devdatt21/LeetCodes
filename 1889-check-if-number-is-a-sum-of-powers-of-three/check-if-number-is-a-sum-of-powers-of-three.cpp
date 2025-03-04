@@ -7,12 +7,12 @@ public:
             return true;
         }
 
-        if(i >= 17)
+        if(i >= 17 || x > n)
         {
             return false;
         }
 
-        return rec(i+1,n,x,v) || rec(i+1,n,x+v[i],v);
+        return rec(i+1,n,x+v[i],v) || rec(i+1,n,x,v);
     }
 
 
